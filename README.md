@@ -33,4 +33,7 @@ hello - responds with a random greeting
 5. The key is TOKEN and the value is the bot's token you copied earlier > "Add New Secret"
 6. Hit Run! As long as the program is running, the bot will operate.
 
-~~~More platforms to come~~~
+
+More platforms (heroku and locally hosted) to come.
+
+Adding more functionality soon.
