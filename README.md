@@ -34,5 +34,6 @@ hello - responds with a random greeting
 6. Hit Run! As long as the program is running, the bot will operate.
 
 
-More platforms (heroku and locally hosted) to come
-Adding more functionality soon
+More platforms (heroku and locally hosted) to come.
+
+Adding more functionality soon.
