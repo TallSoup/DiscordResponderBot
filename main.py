@@ -2,6 +2,7 @@ import os
 import discord
 import random
 import requests
+from discord.ext import commands
 
 
 def quote():
@@ -57,7 +58,6 @@ async def on_ready():
     print('logged in as {0.user}'.format(client))
 
 
-
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -78,7 +78,10 @@ async def on_message(message):
     # Help Function
     if message.content.startswith("/bothelp"):
         await message.channel.send(
-            "Use the following commands: 'hello' will respond with a random greeting, 'inspire' will respond with a random insirational quote, and 'dad joke' will tell you a random dad joke.")
+            f"Use the following commands to control **{str(client.user).split('#')[0]}**: \n\n'hello' will respond with a random greeting \n'inspire' will respond with a"
+            " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"
+            "random Kanye West quote \n'roll' will roll a 6 sided die \n'random' will ask you for a number and "
+            "return a number between 1 and the number you give it")
 
     # Kanye Quote
     if message.content.startswith("kanye"):
@@ -97,7 +100,8 @@ async def on_message(message):
         try:
             if int(msg.content) > 0:
                 result = random_picker(msg.content)
-                await message.channel.send(f"I've randomly picked a number between 1 and {msg.content} and it is **{result}**.")
+                await message.channel.send(
+                    f"I've randomly picked a number between 1 and {msg.content} and it is **{result}**.")
             else:
                 await message.channel.send(f"{msg.content} is not valid, try again with a number greater than 0.")
         except ValueError:
