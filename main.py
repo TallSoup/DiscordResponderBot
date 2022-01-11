@@ -87,6 +87,7 @@ async def on_message(message):
     if message.content.startswith("kanye"):
         await message.channel.send(kanye())
 
+
     # Dice Roll
     if message.content.startswith("roll"):
         await message.channel.send(dice_roll())
