@@ -2,10 +2,13 @@
 A simple Discord responder bot that will tell dad jokes, an inspirational quote, or just say hello.
 
 **Commands(must be at the beginning of a message):**
-/bothelp - will explain the commands
+/bothelp - will explain the commands (not a slashcommand, just looks like one)
 dad joke - tells a random dad joke
 inspire - posts a random inspirational quote attributed to the author
 hello - responds with a random greeting
+kanye - responds with a random Kaybe quote
+roll - rolls a 6 sided die
+random - asks user for a number, returns a random number between 1 and that number
 
 
 **To create a bot for your discord:**
