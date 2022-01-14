@@ -2,11 +2,10 @@ import os
 import discord
 import random
 import requests
-from discord.ext import commands
 
 
 def quote():
-    """returns a formatted quote with author"""
+    """returns a formatted inspirational quote with author"""
     response = requests.get("https://zenquotes.io/api/random").json()
     formatted_quote = f"{response[0]['q']} -{response[0]['a']}"
     return formatted_quote
@@ -21,7 +20,7 @@ def dad_joke():
 
 
 def kanye():
-    """returns a formatted kanye quote"""
+    """returns a formatted kanye quote with a random nickname"""
     kanye_names = ['Pablo', 'Yeezy', 'Yeezus', 'Ye', 'Mr.West',
                    'Kan The Louis Vuitton Don (Kanye - Better Than Yours)', 'The Don (Video)',
                    'Martin Louis the King, Jr. (Video)', 'KanYeezy (Jay-Z - Lucifer)',
@@ -86,7 +85,6 @@ async def on_message(message):
     # Kanye Quote
     if message.content.startswith("kanye"):
         await message.channel.send(kanye())
-
 
     # Dice Roll
     if message.content.startswith("roll"):
