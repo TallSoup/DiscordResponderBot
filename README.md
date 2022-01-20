@@ -42,6 +42,4 @@ random - asks user for a number, returns a random number between 1 and that numb
 6. Hit Run! As long as the program is running, the bot will operate.
 
 
-More platforms (heroku and locally hosted) to come.
-
-Adding more functionality soon.
+Adding more functionality soon including slash commands!
