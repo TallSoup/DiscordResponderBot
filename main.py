@@ -83,7 +83,7 @@ async def on_message(message):
             "return a number between 1 and the number you give it")
 
     # Kanye Quote
-    if message.content.startswith("kanye"):
+    if message.content.startswith("kanye".lower()):
         await message.channel.send(kanye())
 
     # Dice Roll
@@ -91,7 +91,7 @@ async def on_message(message):
         await message.channel.send(dice_roll())
 
     # Random Number Chooser
-    if message.content.startswith("random"):
+    if message.content.startswith("random".lower()):
         # channel = message.channel
         await message.channel.send("I'll pick a number, what is the highest number you want?")
         # wait for user response, then call function
