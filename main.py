@@ -83,7 +83,7 @@ async def on_message(message):
             "return a number between 1 and the number you give it")
 
     # Kanye Quote
-    if message.content.startswith("kanye".lower()):
+    if message.content.startswith("kanye" or "Kanye"):
         await message.channel.send(kanye())
 
     # Dice Roll
