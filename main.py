@@ -63,19 +63,19 @@ async def on_message(message):
         return
 
     # Greeting
-    if message.content.startswith('hello'):
+    if message.content.lower().startswith('hello'):
         await message.channel.send(random.choice(replies))
 
     # Inspiration
-    if message.content.startswith("inspire"):
+    if message.content.lower().startswith("inspire"):
         await message.channel.send(quote())
 
     # Dad Joke
-    if message.content.startswith("dad joke"):
+    if message.content.lower().startswith("dad joke"):
         await message.channel.send(dad_joke())
 
     # Help Function
-    if message.content.startswith("/bothelp"):
+    if message.content.lower().startswith("/bothelp"):
         await message.channel.send(
             f"Use the following commands to control **{str(client.user).split('#')[0]}**: \n\n'hello' will respond with a random greeting \n'inspire' will respond with a"
             " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"
@@ -87,11 +87,11 @@ async def on_message(message):
         await message.channel.send(kanye())
 
     # Dice Roll
-    if message.content.startswith("roll"):
+    if message.content.lower().startswith("roll"):
         await message.channel.send(dice_roll())
 
     # Random Number Chooser
-    if message.content.startswith("random".lower()):
+    if message.content.lower().startswith("random".lower()):
         # channel = message.channel
         await message.channel.send("I'll pick a number, what is the highest number you want?")
         # wait for user response, then call function
