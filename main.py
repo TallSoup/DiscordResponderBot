@@ -75,7 +75,7 @@ async def on_message(message):
         await message.channel.send(dad_joke())
 
     # Help Function
-    if message.content.lower().startswith("/bothelp"):
+    if message.content.lower().startswith("bothelp"):
         await message.channel.send(
             f"Use the following commands to control **{str(client.user).split('#')[0]}**: \n\n'hello' will respond with a random greeting \n'inspire' will respond with a"
             " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"

@@ -7,7 +7,7 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 [Join my test server to give the bot a test drive!](https://discord.gg/s3THRWAVGM)
 
 **Commands(must be at the beginning of a message):**
-/bothelp - will explain the commands (not a slashcommand, just looks like one)
+bothelp - will explain the commands (not a slashcommand, just looks like one)
 dad joke - tells a random dad joke
 inspire - posts a random inspirational quote attributed to the author
 hello - responds with a random greeting
