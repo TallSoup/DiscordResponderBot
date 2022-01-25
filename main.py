@@ -3,6 +3,12 @@ import discord
 import random
 import requests
 
+# set up gateway intents to pull member info below
+intents = discord.Intents.default()
+intents.messages = True
+
+# create connection to discord
+client = discord.Client(intents=intents)
 
 def quote():
     """returns a formatted inspirational quote with author"""
@@ -57,6 +63,7 @@ async def on_ready():
     print('logged in as {0.user}'.format(client))
 
 
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -92,10 +99,11 @@ async def on_message(message):
 
     # Random Number Chooser
     if message.content.lower().startswith("random".lower()):
+        author = message.author
         # channel = message.channel
         await message.channel.send("I'll pick a number, what is the highest number you want?")
         # wait for user response, then call function
-        msg = await client.wait_for('message')
+        msg = await client.wait_for('message', check=lambda message: message.author == author)
         try:
             if int(msg.content) > 0:
                 result = random_picker(msg.content)
