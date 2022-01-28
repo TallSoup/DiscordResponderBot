@@ -50,6 +50,19 @@ def random_picker(number):
     random_number = random.randint(1, int(number))
     return random_number
 
+def satoshi():
+    """returns a formatted message informign the value of 2 cents in satoshi"""
+    response = requests.get("https://api.coinbase.com/v2/prices/spot?currency=USD")
+    btc_spot = response.json()['data']['amount']
+    btc_spot = float(btc_spot)
+    satoshi = btc_spot / 100000000
+    two_cents = int(round(0.02 / satoshi, 0))
+    print(satoshi)
+    print(btc_spot)
+    print(two_cents)
+    message = f"Today's BTC spot price is ${btc_spot}.\nYour two cents are worth {two_cents} satoshi."
+    print(message)
+    return message
 
 # list of greetings in reply to hello function
 replies = ["Hi!", "Hello!", "How are you?", "Greetings!", "Good day to you", "Hallo!", "Hola!", "Bonjour", "Hey!"]
@@ -87,14 +100,15 @@ async def on_message(message):
             f"Use the following commands to control **{str(client.user).split('#')[0]}**: \n\n'hello' will respond with a random greeting \n'inspire' will respond with a"
             " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"
             "random Kanye West quote \n'roll' will roll a 6 sided die \n'random' will ask you for a number and "
-            "return a number between 1 and the number you give it")
+            "return a number between 1 and the number you give it.\n'!satoshi' will tell you todays BTC spot price and "
+            "the satoshi cost of your 2 cents USD.")
 
     # Kanye Quote
     if message.content.lower().startswith("!kanye"):
         await message.channel.send(kanye())
 
     # Dice Roll
-    if message.content.lower().startswith("roll"):
+    if message.content.lower().startswith("!roll"):
         await message.channel.send(dice_roll())
 
     # Random Number Chooser
@@ -114,6 +128,9 @@ async def on_message(message):
         except ValueError:
             await message.channel.send(f"{msg.content} is not valid, try again with a number greater than 0.")
 
+    # Satoshi
+    if message.content.lower().startswith("!satoshi"):
+        await message.channel.send(satoshi())
 
 # In order for this to work, you'll need your bots token (keep this a secret, call with your preferred method, see readme for direction)
 client.run(os.environ['TOKEN'])
