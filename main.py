@@ -10,6 +10,7 @@ intents.messages = True
 # create connection to discord
 client = discord.Client(intents=intents)
 
+
 def quote():
     """returns a formatted inspirational quote with author"""
     response = requests.get("https://zenquotes.io/api/random").json()
@@ -50,6 +51,7 @@ def random_picker(number):
     random_number = random.randint(1, int(number))
     return random_number
 
+
 def satoshi():
     """returns a formatted message informign the value of 2 cents in satoshi"""
     response = requests.get("https://api.coinbase.com/v2/prices/spot?currency=USD")
@@ -64,6 +66,14 @@ def satoshi():
     print(message)
     return message
 
+
+def compliment():
+    response = requests.get("https://complimentr.com/api")
+    nice_words = response.json()['compliment'].capitalize()
+    print(nice_words)
+    return nice_words
+
+
 # list of greetings in reply to hello function
 replies = ["Hi!", "Hello!", "How are you?", "Greetings!", "Good day to you", "Hallo!", "Hola!", "Bonjour", "Hey!"]
 
@@ -74,7 +84,6 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('logged in as {0.user}'.format(client))
-
 
 
 @client.event
@@ -101,7 +110,7 @@ async def on_message(message):
             " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"
             "random Kanye West quote \n'roll' will roll a 6 sided die \n'random' will ask you for a number and "
             "return a number between 1 and the number you give it.\n'!satoshi' will tell you todays BTC spot price and "
-            "the satoshi cost of your 2 cents USD.")
+            "the satoshi cost of your 2 cents USD.\n'!compliment' - pays you a lovely (ok, they're mostly weird) compliment")
 
     # Kanye Quote
     if message.content.lower().startswith("!kanye"):
@@ -131,6 +140,11 @@ async def on_message(message):
     # Satoshi
     if message.content.lower().startswith("!satoshi"):
         await message.channel.send(satoshi())
+
+    # Compliment
+    if message.content.lower().startswith("!compliment"):
+        await message.channel.send(compliment())
+
 
 # In order for this to work, you'll need your bots token (keep this a secret, call with your preferred method, see readme for direction)
 client.run(os.environ['TOKEN'])
