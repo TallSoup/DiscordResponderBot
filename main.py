@@ -60,7 +60,7 @@ def satoshi():
     print(satoshi)
     print(btc_spot)
     print(two_cents)
-    message = f"Today's BTC spot price is ${btc_spot}.\nYour two cents are worth {two_cents} satoshi."
+    message = f"Today's BTC spot price is ${btc_spot}.\nYour two cents = {two_cents} satoshis."
     print(message)
     return message
 
