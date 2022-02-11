@@ -2,7 +2,6 @@ import os
 import discord
 import random
 import requests
-import interactions
 
 # set up gateway intents to pull member info below
 intents = discord.Intents.default()
