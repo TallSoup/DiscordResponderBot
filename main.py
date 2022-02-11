@@ -2,6 +2,7 @@ import os
 import discord
 import random
 import requests
+import interactions
 
 # set up gateway intents to pull member info below
 intents = discord.Intents.default()
@@ -77,13 +78,12 @@ def compliment():
 # list of greetings in reply to hello function
 replies = ["Hi!", "Hello!", "How are you?", "Greetings!", "Good day to you", "Hallo!", "Hola!", "Bonjour", "Hey!"]
 
-# create connection to discord
-client = discord.Client()
-
 
 @client.event
 async def on_ready():
     print('logged in as {0.user}'.format(client))
+    for guild in client.guilds:
+        print(guild)
 
 
 @client.event
