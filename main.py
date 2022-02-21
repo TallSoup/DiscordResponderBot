@@ -9,6 +9,7 @@ intents = discord.Intents.default()
 # intents.messages = True
 
 # create connection to discord
+
 client = discord.Client(intents=intents)
 
 
