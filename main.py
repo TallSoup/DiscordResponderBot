@@ -2,6 +2,7 @@ import os
 import discord
 import random
 import requests
+from prettytable import PrettyTable
 
 # set up gateway intents to pull member info below
 intents = discord.Intents.default()
@@ -74,6 +75,67 @@ def compliment():
     return nice_words
 
 
+def bingo():
+    table = PrettyTable()
+
+    # create numbers for letters
+    b = [x for x in range(1, 16)]
+    i = [x for x in range(16, 31)]
+    n = [x for x in range(31, 46)]
+    g = [x for x in range(46, 61)]
+    o = [x for x in range(61, 76)]
+
+    # pull numbers for card
+    b_list = []
+    while len(b_list) < 5:
+        x = random.choice(b)
+        if x not in b_list:
+            b_list.append(x)
+
+    i_list = []
+    while len(i_list) < 5:
+        x = random.choice(i)
+        if x not in i_list:
+            i_list.append(x)
+
+    n_list = []
+    while len(n_list) < 5:
+        x = random.choice(n)
+        if len(n_list) == 2:
+            n_list.append("FREE")
+        if x not in n_list:
+            n_list.append(x)
+
+    g_list = []
+    while len(g_list) < 5:
+        x = random.choice(g)
+        if x not in g_list:
+            g_list.append(x)
+
+    o_list = []
+    while len(o_list) < 5:
+        x = random.choice(o)
+        if x not in o_list:
+            o_list.append(x)
+
+    # print(b)
+    # print(i)
+    # print(n)
+    # print(g)
+    # print(o)
+
+    # create card
+
+    # table.field_names = ["B", "I" , "N", "G", "O"]
+    table.add_column("B", b_list)
+    table.add_column("I", i_list)
+    table.add_column("N", n_list)
+    table.add_column("G", g_list)
+    table.add_column("O", o_list)
+
+    return table
+
+
 # list of greetings in reply to hello function
 replies = ["Hi!", "Hello!", "How are you?", "Greetings!", "Good day to you", "Hallo!", "Hola!", "Bonjour", "Hey!"]
 
@@ -143,6 +205,10 @@ async def on_message(message):
     # Compliment
     if message.content.lower().startswith("!compliment"):
         await message.channel.send(compliment())
+
+    # Compliment
+    if message.content.lower().startswith("!bingo"):
+        await message.channel.send(bingo())
 
 
 # In order for this to work, you'll need your bots token (keep this a secret, call with your preferred method, see readme for direction)
