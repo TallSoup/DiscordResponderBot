@@ -6,7 +6,7 @@ from prettytable import PrettyTable
 
 # set up gateway intents to pull member info below
 intents = discord.Intents.default()
-intents.messages = True
+# intents.messages = True
 
 # create connection to discord
 client = discord.Client(intents=intents)
@@ -60,11 +60,11 @@ def satoshi():
     btc_spot = float(btc_spot)
     satoshi = btc_spot / 100000000
     two_cents = int(round(0.02 / satoshi, 0))
-    print(satoshi)
-    print(btc_spot)
-    print(two_cents)
+    # print(satoshi)
+    # print(btc_spot)
+    # print(two_cents)
     message = f"The current BTC spot price is ${btc_spot} (Source: coinbase.com).\nYour two cents = {two_cents} satoshis."
-    print(message)
+    # print(message)
     return message
 
 
@@ -133,7 +133,7 @@ def bingo():
     table.add_column("G", g_list)
     table.add_column("O", o_list)
 
-    return table
+    return f"``` {table} ```"
 
 
 # list of greetings in reply to hello function
