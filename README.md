@@ -16,6 +16,7 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 !random - asks user for a number, returns a random number between 1 and that number
 !satoshi - responds with current BTC spot price and satoshi cost of 2cents USD
 !compliment - pays you a lovely (ok, they're mostly weird) compliment
+!bingo - print a randomized bindo card
 
 **To create a bot for your discord:**
 1. Ensure you have admin permissions on the server you want to add your new bot to

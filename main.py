@@ -70,6 +70,7 @@ def satoshi():
 
 
 def compliment():
+    """pays you a weird compliment"""
     response = requests.get("https://complimentr.com/api")
     nice_words = response.json()['compliment'].capitalize()
     print(nice_words)
@@ -77,6 +78,7 @@ def compliment():
 
 
 def bingo():
+    """returns a randomized bingo card"""
     table = PrettyTable()
 
     # create numbers for letters
@@ -172,7 +174,8 @@ async def on_message(message):
             " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"
             "random Kanye West quote \n'roll' will roll a 6 sided die \n'random' will ask you for a number and "
             "return a number between 1 and the number you give it.\n'!satoshi' will tell you todays BTC spot price and "
-            "the satoshi cost of your 2 cents USD.\n'!compliment' - pays you a lovely (ok, they're mostly weird) compliment")
+            "the satoshi cost of your 2 cents USD.\n'!compliment' - pays you a lovely (ok, they're mostly weird) compliment\n"
+            "'!bingo' will print a random bingo card.")
 
     # Kanye Quote
     if message.content.lower().startswith("!kanye"):
