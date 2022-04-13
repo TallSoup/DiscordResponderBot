@@ -42,6 +42,3 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 4. Go to "Secrets" (The lock on the left sidebar)
 5. The key is TOKEN and the value is the bot's token you copied earlier > "Add New Secret"
 6. Hit Run! As long as the program is running, the bot will operate.
-
-
-Adding more functionality soon including slash commands!
