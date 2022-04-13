@@ -7,16 +7,27 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 [Join my test server to give the bot a test drive!](https://discord.gg/s3THRWAVGM)
 
 **Commands(must be at the beginning of a message):**
+
 !bothelp - will explain the commands (not a slashcommand, just looks like one)
+
 !dad joke - tells a random dad joke
+
 !inspire - posts a random inspirational quote attributed to the author
+
 !hello - responds with a random greeting
+
 !kanye - responds with a random Kaybe quote
+
 !roll - rolls a 6 sided die
+
 !random - asks user for a number, returns a random number between 1 and that number
+
 !satoshi - responds with current BTC spot price and satoshi cost of 2cents USD
+
 !compliment - pays you a lovely (ok, they're mostly weird) compliment
+
 !bingo - print a randomized bindo card
+
 
 **To create a bot for your discord:**
 1. Ensure you have admin permissions on the server you want to add your new bot to
