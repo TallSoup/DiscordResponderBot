@@ -4,7 +4,7 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 
 (Hosted on free Heroku account. Will take a few seconds to "wake up" if it hasn't been accessed in the last 30 minutes.)
 
-[Join my test server to give the bot a test drive!](https://discord.gg/s3THRWAVGM)
+[Join my test server to give the bot a test drive!](https://discord.gg/Kk3r9kfmnp)
 
 **Commands(must be at the beginning of a message):**
 
