@@ -16,7 +16,7 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 
 !hello - responds with a random greeting
 
-!kanye - responds with a random Kaybe quote
+!kanye - responds with a random Kanye quote
 
 !roll - rolls a 6 sided die
 
@@ -26,7 +26,7 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 
 !compliment - pays you a lovely (ok, they're mostly weird) compliment
 
-!bingo - print a randomized bindo card
+!bingo - print a randomized bingo card
 
 
 **To create a bot for your discord:**
