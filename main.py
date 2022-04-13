@@ -9,7 +9,6 @@ intents = discord.Intents.default()
 # intents.messages = True
 
 # create connection to discord
-
 client = discord.Client(intents=intents)
 
 
@@ -170,10 +169,10 @@ async def on_message(message):
     # Help Function
     if message.content.lower().startswith("!bothelp"):
         await message.channel.send(
-            f"Use the following commands to control **{str(client.user).split('#')[0]}**: \n\n'hello' will respond with a random greeting \n'inspire' will respond with a"
-            " random inspirational quote \n'dad joke' will tell you a random dad joke \n'kanye' will respond with a"
-            "random Kanye West quote \n'roll' will roll a 6 sided die \n'random' will ask you for a number and "
-            "return a number between 1 and the number you give it.\n'!satoshi' will tell you todays BTC spot price and "
+            f"Use the following commands to control **{str(client.user).split('#')[0]}**: \n\n'!hello' will respond with a random greeting \n'!inspire' will respond with a"
+            " random inspirational quote \n'!dad joke' will tell you a random dad joke \n'!kanye' will respond with a "
+            "random Kanye West quote \n'!roll' will roll a 6 sided die \n'!random' will ask you for a number and "
+            "return a number between 1 and the number you give it.\n'!satoshi' will tell you today's BTC spot price and "
             "the satoshi cost of your 2 cents USD.\n'!compliment' - pays you a lovely (ok, they're mostly weird) compliment\n"
             "'!bingo' will print a random bingo card.")
 
