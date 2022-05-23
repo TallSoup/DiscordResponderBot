@@ -8,7 +8,7 @@ A simple Discord responder bot that will tell dad jokes, an inspirational quote,
 
 **Commands(must be at the beginning of a message):**
 
-!bothelp - will explain the commands (not a slashcommand, just looks like one)
+!bothelp - will explain the commands
 
 !dad joke - tells a random dad joke
 
