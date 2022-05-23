@@ -1,5 +1,5 @@
 # DiscordResponderBot
-A simple Discord responder bot that will tell dad jokes, an inspirational quote, or just say hello.
+A Discord responder bot that will tell dad jokes, an inspirational quote, or just say hello.
 
 
 (Hosted on free Heroku account. Will take a few seconds to "wake up" if it hasn't been accessed in the last 30 minutes.)
